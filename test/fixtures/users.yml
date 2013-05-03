@@ -3,3 +3,9 @@ itay:
   last_name: "Banner"
   profile_name: "ibanner"
   email: "itay@ibanner.co.il"
+
+user2:
+  first_name: "User"
+  last_name: "2"
+  profile_name: "user_2"
+  email: "user2@ibanner.co.il"
