@@ -9,3 +9,9 @@ user2:
   last_name: "2"
   profile_name: "user_2"
   email: "user2@ibanner.co.il"
+
+user3:
+  first_name: "User"
+  last_name: "3"
+  profile_name: "user_3"
+  email: "user3@ibanner.co.il"
