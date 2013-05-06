@@ -1,5 +1,6 @@
 require 'test_helper'
 
+#noinspection ALL
 class StatusesControllerTest < ActionController::TestCase
   setup do
     @status = statuses(:one)
@@ -45,7 +46,7 @@ class StatusesControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to status_path(assigns(:status))
-    assert_equal assigns(:status).user_id, users(:user2).id
+    assert_equal assigns(:status).user_id, users(:itay).id
   end
 
   test "should show status" do
@@ -69,6 +70,20 @@ class StatusesControllerTest < ActionController::TestCase
     sign_in users(:itay)
     put :update, id: @status, status: { content: @status.content }
     assert_redirected_to status_path(assigns(:status))
+  end
+
+  test "should update status for the current user when logged in" do
+    sign_in users(:itay)
+    put :update, id: @status, status: { content: @status.content, user_id: users(:user2).id }
+    assert_redirected_to status_path(assigns(:status))
+    assert_equal assigns(:status).user_id, users(:itay).id
+  end
+
+  test "should not update the status if nothing has changed" do
+    sign_in users(:itay)
+    put :update, id: @status
+    assert_redirected_to status_path(assigns(:status))
+    assert_equal assigns(:status).user_id, users(:itay).id
   end
 
   test "should be logged in to update a status" do
