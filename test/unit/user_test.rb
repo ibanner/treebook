@@ -61,4 +61,8 @@ class UserTest < ActiveSupport::TestCase
     users(:itay).friends.reload
     assert users(:itay).friends.include?(users(:user3))
   end
+
+  test "that calling to_param on a user shows the profile name" do
+    assert_equal "ibanner", users(:itay).to_param
+  end
 end

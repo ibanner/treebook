@@ -3,6 +3,7 @@ itay:
   last_name: "Banner"
   profile_name: "ibanner"
   email: "itay@ibanner.co.il"
+  encrypted_password: "$2a$10$Fh/Hm8RxDsuPTeBUr6864.GARlcmt7zF2WspaXGr3BIv2C27N.osq"
 
 user2:
   first_name: "User"
